@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 *print_alphabet-printstheenglishalphabetfroma-z.
 *Return:Nothing.
