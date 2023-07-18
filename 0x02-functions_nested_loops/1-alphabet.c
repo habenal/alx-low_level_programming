@@ -1,15 +1,15 @@
 #include "main.h"
 /**
-*print_alphabet-printstheenglishalphabetfroma-z.
-*Return:Nothing.
+*print_alphabet - function that print alphabet
+*it prints in lowercase
+*Return: no return
 */
-voidprint_alphabet(void)
+void print_alphabet(void)
 {
-charc;
-
-for(c='a';c<='z';c++)
+int letter;
+for (letter = 'a'; letter <= 'z'; letter++)
 {
-_putchar(c);
+_putchar (letter);
 }
-_putchar('\n');
+_putchar (10);
 }
