@@ -1,30 +1,43 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * *_calloc - function to allocates memory
- * @nmemb: unsigned int type
- * @size: unsigned int type
- * Return: return pointer to array
+ * str_concat - get ends of input and add together for size
+ * @s1: input one to concat
+ * @s2: input two to concat
+ * Return: concat of s1 and s2
  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
-	unsigned int count;
+	char *conct;
+	int i, ci;
 
-	if (nmemb == 0 || size == 0)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	i = ci = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[ci] != '\0')
+		ci++;
+	conct = malloc(sizeof(char) * (i + ci + 1));
+
+	if (conct == NULL)
 		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
+	i = ci = 0;
+	while (s1[i] != '\0')
 	{
-		return (NULL);
+		conct[i] = s1[i];
+		i++;
 	}
-	count = 0;
-	while (count < nmemb * size)
+
+	while (s2[ci] != '\0')
 	{
-		ptr[count] = 0;
-		count++;
+		conct[i] = s2[ci];
+		i++, ci++;
 	}
-	return (ptr);
+	conct[i] = '\0';
+	return (conct);
 }
+
